@@ -1,9 +1,10 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
 import css from 'components/ContactList/ContactList.module.css';
-const ContactList = ({ contacts, deleteContact }) => (
+
+export const ContactList = ({ visibleNames, deleteContact }) => (
   <ul className={css.list}>
-    {contacts.map(({ name, number, id }) => (
+    {visibleNames().map(({ name, number, id }) => (
       <li key={id} className={css.listItem}>
         <p className={css.title}>{name}</p>
         <p>{number}</p>
@@ -15,15 +16,8 @@ const ContactList = ({ contacts, deleteContact }) => (
   </ul>
 );
 
-export default ContactList;
+// export default ContactList;
 
 ContactList.propTypes = {
-  contacts: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-      number: PropTypes.string.isRequired,
-    })
-  ).isRequired,
   deleteContact: PropTypes.func.isRequired,
 };
