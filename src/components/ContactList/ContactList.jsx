@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import { PropTypes } from 'prop-types';
 import css from 'components/ContactList/ContactList.module.css';
 
@@ -15,8 +15,6 @@ export const ContactList = ({ visibleNames, deleteContact }) => (
     ))}
   </ul>
 );
-
-// export default ContactList;
 
 ContactList.propTypes = {
   deleteContact: PropTypes.func.isRequired,
