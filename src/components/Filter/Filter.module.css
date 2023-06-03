@@ -1,4 +1,20 @@
 .input {
-  margin-top: 20px;
-  margin-left: 15px;
+  display: block;
+  width: 100%;
+  padding: 6px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.filterContainer {
+  margin-bottom: 20px;
 }

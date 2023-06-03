@@ -39,7 +39,7 @@ export const App = () => {
     setFilter(e.currentTarget.value);
   };
 
-  const checkEqualContacts = e => {
+  const checkDuplicateContacts = e => {
     return contacts.find(
       contact =>
         contact.name.toLowerCase() ===
@@ -56,13 +56,21 @@ export const App = () => {
     <div className={css.container}>
       <h1>Phonebook</h1>
       <Form
-        // onSubmit={formSubmitHandler}
         addContact={addContact}
-        checkEqualContacts={checkEqualContacts}
+        checkDuplicateContacts={checkDuplicateContacts}
       />
       <Filter filter={filter} onChange={handleChange} />
-      <h2>Contacts</h2>
-      <ContactList visibleNames={visibleNames} deleteContact={deleteContact} />
+      {contacts.length > 0 ? (
+        <>
+          <h2 className={css.contactsTitle}>Contacts</h2>
+          <ContactList
+            visibleNames={visibleNames}
+            deleteContact={deleteContact}
+          />
+        </>
+      ) : (
+        ''
+      )}
     </div>
   );
 };

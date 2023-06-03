@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { PropTypes } from 'prop-types';
 import css from 'components/ContactForm/ContactForm.module.css';
 
-export const Form = ({ addContact, checkEqualContacts }) => {
+export const Form = ({ addContact, checkDuplicateContacts }) => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
 
@@ -25,7 +25,7 @@ export const Form = ({ addContact, checkEqualContacts }) => {
   const handleSubmit = e => {
     e.preventDefault();
 
-    if (checkEqualContacts(e)) {
+    if (checkDuplicateContacts(e)) {
       alert(`${name} already in contacts`);
       return;
     }
