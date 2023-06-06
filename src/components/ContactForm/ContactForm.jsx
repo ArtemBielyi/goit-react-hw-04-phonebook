@@ -1,5 +1,4 @@
 import { useState } from 'react';
-// import { nanoid } from 'nanoid';
 import { PropTypes } from 'prop-types';
 import css from 'components/ContactForm/ContactForm.module.css';
 
@@ -18,8 +17,6 @@ export const Form = ({ addContact, checkDuplicateContacts }) => {
       default:
         return;
     }
-
-    // this.setState({ [e.target.name]: e.target.value });
   };
 
   const handleSubmit = e => {
@@ -30,13 +27,6 @@ export const Form = ({ addContact, checkDuplicateContacts }) => {
       return;
     }
     addContact(name, number);
-    // const { name, number } = this.state;
-    // const newContact = {
-    //   id: nanoid(),
-    //   name,
-    //   number,
-    // };
-    // this.props.addContact(newContact);
     reset();
   };
 
@@ -44,8 +34,6 @@ export const Form = ({ addContact, checkDuplicateContacts }) => {
     setName('');
     setNumber('');
   };
-
-  // const { name, number } = this.state;
 
   return (
     <form onSubmit={handleSubmit} className={css.form}>
